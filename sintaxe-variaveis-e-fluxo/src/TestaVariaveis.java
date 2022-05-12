@@ -15,7 +15,9 @@ public class TestaVariaveis {
 		
 		idade *= 2;
 		
-		System.out.println(idade);
+		System.out.println("A idade final é " + idade);
+		
+	
 	}
 
 }
