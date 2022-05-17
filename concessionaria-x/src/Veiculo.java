@@ -1,14 +1,17 @@
 
 public class Veiculo {
+	private Proprietario proprietario;
 	private String marca;
 	private String modelo;
 	private int ano;
 	private double preco;
-	private static int totalDeRegistros;
-// RENAULT CLIO 2016, 20.255
+	private static int totalRegistros;
+// Ex de veículo: RENAULT CLIO 2016, 20.255
+//	Vincular um veículo a um proprietário; CERTO;
+//  Criar um método para retornar quantos veículos cadastrados eu tenho;
 	
 	public Veiculo (String marca, String modelo, int ano, double preco){
-		Veiculo.totalDeRegistros++;
+		Veiculo.totalRegistros++;
 		this.marca = marca;
 		this.modelo = modelo;
 		
@@ -20,7 +23,7 @@ public class Veiculo {
 			this.ano = ano;			
 		}
 		this.preco = preco;
-		System.out.println("Seu veículo é o " + Veiculo.totalDeRegistros + "º"
+		System.out.println("Seu veículo é o " + Veiculo.totalRegistros + "º"
 				+ " a ser cadastrado.");
 	}
 	
@@ -38,6 +41,19 @@ public class Veiculo {
 	
 	public double getPreco() {
 		return this.preco;
+	}
+	
+	public static int getTotalRegistros() {
+		return totalRegistros;
+	}
+	
+	public Proprietario getProprietario() {
+		return proprietario;
+	}
+	
+	public void setProprietario(Proprietario proprietario) {
+		this.proprietario = proprietario;
+		
 	}
 	
 	
