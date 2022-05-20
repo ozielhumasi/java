@@ -1,13 +1,17 @@
-
-public class Worker {
+// Uma classe abstrata não pode ser instanciada.
+public abstract class Worker {
 
 	private String name;
 	private String cpf;
 	private double wage;
+
+// A partir de agora, os funcionário não têm mais uma 
+// bonificação padrão. Cada um recebe uma específica.
+// Um MÉTODO ABSTRATO é aquele sem corpo, sem implementação
+// Ele DEVE implementado nos MÉTODOS FILHOS.
 	
-	public double getBonus() {
-		return this.wage * 0.05;
-	}
+	
+	public abstract double getBonus();
 	
 	public String getName() {
 		return name;
@@ -27,5 +31,6 @@ public class Worker {
 	public void setWage(double wage) {
 		this.wage = wage;
 	}
+	
 
 }

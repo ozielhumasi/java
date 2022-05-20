@@ -1,7 +1,7 @@
 
-public class Account {
+public abstract class Account {
 	
-	private double balance;
+	protected double balance;
 	private int agency;
 	private int number;
 	private Client owner;
@@ -22,9 +22,7 @@ public class Account {
 //				+ "conta cujo número é: " + this.number);			
 	}
 	
-	public void deposit(double value) {
-		this.balance = this.balance + value;
-	}
+	public abstract void deposit(double value);
 	
 	public boolean withdraw (double value) {
 		if (this.balance >= value) {

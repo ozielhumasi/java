@@ -1,20 +1,13 @@
 // Abaixo está escrito: Gerente é um Funcionário.
 // Gerente HERDA de funcionário;	
-public class Manager extends Worker{
+public class Manager extends Worker implements Certifiable {
 	
-	private int key;
+	private Certifier certificador;
 	
-	public void setKey(int key) {
-		this.key = key;
+	public Manager() {
+		this.certificador = new Certifier();	
 	}
 	
-	public boolean certify(int key) {
-		if(this.key == key) {
-			return true;
-		} else {
-			return false;
-		}
-	}
 	
 	
 	public double getBonus() {
@@ -22,7 +15,19 @@ public class Manager extends Worker{
 		// atributo da classe MÃE.
 		System.out.println("Chamado o método de bonificação "
 				+ "do MANAGER!");
-		return super.getBonus() + super.getWage();
+		return super.getWage();
 		}
+
+	@Override
+	public void setKey(int key) {
+		this.certificador.setKey(key);
+		
+	}
+
+	@Override
+	public boolean certify(int key)  {
+		return this.certificador.certify(key);
+	}
+
 
 }
