@@ -6,7 +6,7 @@ public class Produto {
 
     public Produto(int id, String nome){
         this.id = id;
-        this.nome = nome;
+        this.nome = nome.toUpperCase();
     }
 
     @Override
